@@ -128,7 +128,7 @@
     CGFloat whRate = self.asset.pixelWidth / self.asset.pixelHeight;
     CGFloat screenRate = 16.0/9.0;
     
-    if (hwRate > screenRate || whRate > screenRate) {
+    if ((hwRate > screenRate || whRate > screenRate) && (self.asset.pixelWidth > [UIScreen mainScreen].bounds.size.width || self.asset.pixelHeight > [UIScreen mainScreen].bounds.size.height)) {
         return YES;
     }else {
         return NO;
