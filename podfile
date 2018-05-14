@@ -1,0 +1,5 @@
+target 'PhotoKit' do
+
+pod 'Masonry'
+
+end
