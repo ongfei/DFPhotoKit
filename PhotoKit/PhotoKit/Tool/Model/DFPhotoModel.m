@@ -17,10 +17,17 @@
 
 - (DFPhotoModelalDirection)direction {
     if (self.asset) {
-        if (self.asset.pixelWidth >= self.asset.pixelHeight) {
-            _direction = DFPhotoModelalDirectionHorizontal;
-        }else if (self.asset.pixelWidth < self.asset.pixelHeight) {
+//        if (self.asset.pixelWidth >= self.asset.pixelHeight) {
+//            _direction = DFPhotoModelalDirectionHorizontal;
+//        }else if (self.asset.pixelWidth < self.asset.pixelHeight) {
+//            _direction = DFPhotoModelalDirectionVertical;
+//        }
+        CGFloat rate = self.asset.pixelHeight / self.asset.pixelWidth;
+        CGFloat screenRate = 16.0/9.0;
+        if (rate > screenRate) {
             _direction = DFPhotoModelalDirectionVertical;
+        }else {
+            _direction = DFPhotoModelalDirectionHorizontal;
         }
     }
     return _direction;
@@ -117,18 +124,14 @@
 
 - (BOOL)isPanorama {
     
-    if (self.direction == DFPhotoModelalDirectionHorizontal) {
-        if ((self.imageSize.width / self.imageSize.height) > (1.8) ) {
-            return YES;
-        }else {
-            return NO;
-        }
+    CGFloat hwRate = self.asset.pixelHeight / self.asset.pixelWidth;
+    CGFloat whRate = self.asset.pixelWidth / self.asset.pixelHeight;
+    CGFloat screenRate = 16.0/9.0;
+    
+    if (hwRate > screenRate || whRate > screenRate) {
+        return YES;
     }else {
-        if ((self.imageSize.height / self.imageSize.width) > (1.8) ) {
-            return YES;
-        }else {
-            return NO;
-        }
+        return NO;
     }
 }
 @end
