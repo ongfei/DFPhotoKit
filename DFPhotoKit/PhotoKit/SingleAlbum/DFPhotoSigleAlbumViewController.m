@@ -273,17 +273,21 @@
 
 - (void)originalBtnClick {
     self.originalBtn.selected = !self.originalBtn.selected;
+    
 }
 
 -(void)changeCount {
     self.countL.hidden = NO;
     if (self.selectPhotoArr.count > 0) {
         self.countL.text = [NSString stringWithFormat:@"%ld",self.selectPhotoArr.count];
+        self.originalBtn.hidden = NO;
     }else if (self.selectVideoArr.count > 0) {
         self.countL.text = [NSString stringWithFormat:@"%ld",self.selectVideoArr.count];
+        self.originalBtn.hidden = YES;
     }else {
         self.countL.text = @"0";
         self.countL.hidden = YES;
+        self.originalBtn.hidden = NO;
     }
     
     if (self.selectPhotoArr.count != 0 || self.selectVideoArr.count != 0) {
@@ -301,8 +305,12 @@
     }
 
     NSArray *arr = self.selectPhotoArr.count > 0 ? self.selectPhotoArr : self.selectVideoArr.count > 0 ? self.selectVideoArr : nil;
-    [DFPhotoKitDeal writeSelectModelListToTempPathWithList:arr  type:DFPhotoSizeTypeScaleScreen scale:0.8 success:^(NSArray<NSURL *> *allURL, NSArray<NSURL *> *photoURL, NSArray<NSURL *> *videoURL) {
-        
+    CGFloat scale = 0.8;
+    if (self.originalBtn.selected && !self.originalBtn.hidden) {
+        scale = 1;
+    }
+    
+    [DFPhotoKitDeal writeSelectModelListToTempPathWithList:arr  type:DFPhotoSizeTypeScaleScreen scale:scale success:^(NSArray<NSURL *> *allURL, NSArray<NSURL *> *photoURL, NSArray<NSURL *> *videoURL) {
         
         NSLog(@"%@",allURL);
         NSLog(@"%@",[NSTemporaryDirectory() stringByAppendingPathComponent:@""]);

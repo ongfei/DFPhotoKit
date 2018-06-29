@@ -9,12 +9,23 @@
 /* Begin PBXBuildFile section */
 		65CA121B20E6179D0000C841 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CA121A20E6179D0000C841 /* AppDelegate.m */; };
 		65CA121E20E6179D0000C841 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CA121D20E6179D0000C841 /* ViewController.m */; };
-		65CA122120E6179D0000C841 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65CA121F20E6179D0000C841 /* Main.storyboard */; };
 		65CA122320E6179E0000C841 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65CA122220E6179E0000C841 /* Assets.xcassets */; };
-		65CA122620E6179E0000C841 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65CA122420E6179E0000C841 /* LaunchScreen.storyboard */; };
 		65CA122920E6179E0000C841 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CA122820E6179E0000C841 /* main.m */; };
 		65CA123320E6179E0000C841 /* DFPhotoKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CA123220E6179E0000C841 /* DFPhotoKitTests.m */; };
 		65CA123E20E6179E0000C841 /* DFPhotoKitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CA123D20E6179E0000C841 /* DFPhotoKitUITests.m */; };
+		65CA129520E628820000C841 /* DFPhotoSigleAlbumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CA127920E628820000C841 /* DFPhotoSigleAlbumCell.m */; };
+		65CA129620E628820000C841 /* DFPhotoSigleAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CA127A20E628820000C841 /* DFPhotoSigleAlbumViewController.m */; };
+		65CA129720E628820000C841 /* DFPhotoSigleAlbumCameraCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CA127C20E628820000C841 /* DFPhotoSigleAlbumCameraCell.m */; };
+		65CA129820E628820000C841 /* DFVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CA127F20E628820000C841 /* DFVideoPlayer.m */; };
+		65CA129920E628820000C841 /* DFPhotoPreviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CA128220E628820000C841 /* DFPhotoPreviewCell.m */; };
+		65CA129A20E628820000C841 /* DFPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CA128420E628820000C841 /* DFPreviewViewController.m */; };
+		65CA129B20E628820000C841 /* DFVideoPreviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CA128620E628820000C841 /* DFVideoPreviewCell.m */; };
+		65CA129C20E628820000C841 /* DFPhotoKitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CA128920E628820000C841 /* DFPhotoKitManager.m */; };
+		65CA129D20E628820000C841 /* DFPhotoKitDeal.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CA128A20E628820000C841 /* DFPhotoKitDeal.m */; };
+		65CA129E20E628820000C841 /* DFImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CA128D20E628820000C841 /* DFImageView.m */; };
+		65CA129F20E628820000C841 /* DFPhotoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CA128E20E628820000C841 /* DFPhotoModel.m */; };
+		65CA12A020E628820000C841 /* DFPhotoAlbumModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CA129120E628820000C841 /* DFPhotoAlbumModel.m */; };
+		65CA12A120E628820000C841 /* DFPhotoKitCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CA129320E628820000C841 /* DFPhotoKitCollectionViewController.m */; };
 		9B631905816F009071E656D1 /* libPods-DFPhotoKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 412174EBF67473BE24674891 /* libPods-DFPhotoKit.a */; };
 /* End PBXBuildFile section */
 
@@ -42,9 +53,7 @@
 		65CA121A20E6179D0000C841 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		65CA121C20E6179D0000C841 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		65CA121D20E6179D0000C841 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		65CA122020E6179D0000C841 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		65CA122220E6179E0000C841 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		65CA122520E6179E0000C841 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65CA122720E6179E0000C841 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65CA122820E6179E0000C841 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		65CA122E20E6179E0000C841 /* DFPhotoKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DFPhotoKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +62,32 @@
 		65CA123920E6179E0000C841 /* DFPhotoKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DFPhotoKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65CA123D20E6179E0000C841 /* DFPhotoKitUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DFPhotoKitUITests.m; sourceTree = "<group>"; };
 		65CA123F20E6179E0000C841 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65CA127820E628820000C841 /* DFPhotoSigleAlbumCameraCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPhotoSigleAlbumCameraCell.h; sourceTree = "<group>"; };
+		65CA127920E628820000C841 /* DFPhotoSigleAlbumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFPhotoSigleAlbumCell.m; sourceTree = "<group>"; };
+		65CA127A20E628820000C841 /* DFPhotoSigleAlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFPhotoSigleAlbumViewController.m; sourceTree = "<group>"; };
+		65CA127B20E628820000C841 /* DFPhotoSigleAlbumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPhotoSigleAlbumCell.h; sourceTree = "<group>"; };
+		65CA127C20E628820000C841 /* DFPhotoSigleAlbumCameraCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFPhotoSigleAlbumCameraCell.m; sourceTree = "<group>"; };
+		65CA127D20E628820000C841 /* DFPhotoSigleAlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPhotoSigleAlbumViewController.h; sourceTree = "<group>"; };
+		65CA127F20E628820000C841 /* DFVideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFVideoPlayer.m; sourceTree = "<group>"; };
+		65CA128020E628820000C841 /* DFPreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPreviewViewController.h; sourceTree = "<group>"; };
+		65CA128120E628820000C841 /* DFVideoPreviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFVideoPreviewCell.h; sourceTree = "<group>"; };
+		65CA128220E628820000C841 /* DFPhotoPreviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFPhotoPreviewCell.m; sourceTree = "<group>"; };
+		65CA128320E628820000C841 /* DFVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFVideoPlayer.h; sourceTree = "<group>"; };
+		65CA128420E628820000C841 /* DFPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFPreviewViewController.m; sourceTree = "<group>"; };
+		65CA128520E628820000C841 /* DFPhotoPreviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPhotoPreviewCell.h; sourceTree = "<group>"; };
+		65CA128620E628820000C841 /* DFVideoPreviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFVideoPreviewCell.m; sourceTree = "<group>"; };
+		65CA128820E628820000C841 /* DFImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFImageView.h; sourceTree = "<group>"; };
+		65CA128920E628820000C841 /* DFPhotoKitManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFPhotoKitManager.m; sourceTree = "<group>"; };
+		65CA128A20E628820000C841 /* DFPhotoKitDeal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFPhotoKitDeal.m; sourceTree = "<group>"; };
+		65CA128B20E628820000C841 /* DFPhotoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPhotoModel.h; sourceTree = "<group>"; };
+		65CA128C20E628820000C841 /* DFPhotoAlbumModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPhotoAlbumModel.h; sourceTree = "<group>"; };
+		65CA128D20E628820000C841 /* DFImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFImageView.m; sourceTree = "<group>"; };
+		65CA128E20E628820000C841 /* DFPhotoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFPhotoModel.m; sourceTree = "<group>"; };
+		65CA128F20E628820000C841 /* DFPhotoKitDeal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPhotoKitDeal.h; sourceTree = "<group>"; };
+		65CA129020E628820000C841 /* DFPhotoKitManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPhotoKitManager.h; sourceTree = "<group>"; };
+		65CA129120E628820000C841 /* DFPhotoAlbumModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFPhotoAlbumModel.m; sourceTree = "<group>"; };
+		65CA129320E628820000C841 /* DFPhotoKitCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFPhotoKitCollectionViewController.m; sourceTree = "<group>"; };
+		65CA129420E628820000C841 /* DFPhotoKitCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPhotoKitCollectionViewController.h; sourceTree = "<group>"; };
 		74A97D7F103170A3F959E3C5 /* Pods-DFPhotoKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DFPhotoKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DFPhotoKit/Pods-DFPhotoKit.debug.xcconfig"; sourceTree = "<group>"; };
 		F78771FA71ADE6D623439423 /* Pods-DFPhotoKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DFPhotoKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-DFPhotoKit/Pods-DFPhotoKit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,13 +143,12 @@
 		65CA121820E6179D0000C841 /* DFPhotoKit */ = {
 			isa = PBXGroup;
 			children = (
+				65CA124B20E621500000C841 /* PhotoKit */,
 				65CA121920E6179D0000C841 /* AppDelegate.h */,
 				65CA121A20E6179D0000C841 /* AppDelegate.m */,
 				65CA121C20E6179D0000C841 /* ViewController.h */,
 				65CA121D20E6179D0000C841 /* ViewController.m */,
-				65CA121F20E6179D0000C841 /* Main.storyboard */,
 				65CA122220E6179E0000C841 /* Assets.xcassets */,
-				65CA122420E6179E0000C841 /* LaunchScreen.storyboard */,
 				65CA122720E6179E0000C841 /* Info.plist */,
 				65CA122820E6179E0000C841 /* main.m */,
 			);
@@ -137,6 +171,71 @@
 				65CA123F20E6179E0000C841 /* Info.plist */,
 			);
 			path = DFPhotoKitUITests;
+			sourceTree = "<group>";
+		};
+		65CA124B20E621500000C841 /* PhotoKit */ = {
+			isa = PBXGroup;
+			children = (
+				65CA127E20E628820000C841 /* 图片浏览器 */,
+				65CA129220E628820000C841 /* AllAlbum */,
+				65CA127720E628820000C841 /* SingleAlbum */,
+				65CA128720E628820000C841 /* Tool */,
+			);
+			path = PhotoKit;
+			sourceTree = "<group>";
+		};
+		65CA127720E628820000C841 /* SingleAlbum */ = {
+			isa = PBXGroup;
+			children = (
+				65CA127D20E628820000C841 /* DFPhotoSigleAlbumViewController.h */,
+				65CA127A20E628820000C841 /* DFPhotoSigleAlbumViewController.m */,
+				65CA127B20E628820000C841 /* DFPhotoSigleAlbumCell.h */,
+				65CA127920E628820000C841 /* DFPhotoSigleAlbumCell.m */,
+				65CA127820E628820000C841 /* DFPhotoSigleAlbumCameraCell.h */,
+				65CA127C20E628820000C841 /* DFPhotoSigleAlbumCameraCell.m */,
+			);
+			path = SingleAlbum;
+			sourceTree = "<group>";
+		};
+		65CA127E20E628820000C841 /* 图片浏览器 */ = {
+			isa = PBXGroup;
+			children = (
+				65CA127F20E628820000C841 /* DFVideoPlayer.m */,
+				65CA128020E628820000C841 /* DFPreviewViewController.h */,
+				65CA128120E628820000C841 /* DFVideoPreviewCell.h */,
+				65CA128220E628820000C841 /* DFPhotoPreviewCell.m */,
+				65CA128320E628820000C841 /* DFVideoPlayer.h */,
+				65CA128420E628820000C841 /* DFPreviewViewController.m */,
+				65CA128520E628820000C841 /* DFPhotoPreviewCell.h */,
+				65CA128620E628820000C841 /* DFVideoPreviewCell.m */,
+			);
+			path = "图片浏览器";
+			sourceTree = "<group>";
+		};
+		65CA128720E628820000C841 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				65CA128820E628820000C841 /* DFImageView.h */,
+				65CA128920E628820000C841 /* DFPhotoKitManager.m */,
+				65CA128A20E628820000C841 /* DFPhotoKitDeal.m */,
+				65CA128B20E628820000C841 /* DFPhotoModel.h */,
+				65CA128C20E628820000C841 /* DFPhotoAlbumModel.h */,
+				65CA128D20E628820000C841 /* DFImageView.m */,
+				65CA128E20E628820000C841 /* DFPhotoModel.m */,
+				65CA128F20E628820000C841 /* DFPhotoKitDeal.h */,
+				65CA129020E628820000C841 /* DFPhotoKitManager.h */,
+				65CA129120E628820000C841 /* DFPhotoAlbumModel.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		65CA129220E628820000C841 /* AllAlbum */ = {
+			isa = PBXGroup;
+			children = (
+				65CA129320E628820000C841 /* DFPhotoKitCollectionViewController.m */,
+				65CA129420E628820000C841 /* DFPhotoKitCollectionViewController.h */,
+			);
+			path = AllAlbum;
 			sourceTree = "<group>";
 		};
 		9FC79D6BF7CEAEB113830253 /* Pods */ = {
@@ -260,9 +359,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65CA122620E6179E0000C841 /* LaunchScreen.storyboard in Resources */,
 				65CA122320E6179E0000C841 /* Assets.xcassets in Resources */,
-				65CA122120E6179D0000C841 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,8 +406,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				65CA121E20E6179D0000C841 /* ViewController.m in Sources */,
+				65CA129D20E628820000C841 /* DFPhotoKitDeal.m in Sources */,
+				65CA129A20E628820000C841 /* DFPreviewViewController.m in Sources */,
+				65CA12A020E628820000C841 /* DFPhotoAlbumModel.m in Sources */,
 				65CA122920E6179E0000C841 /* main.m in Sources */,
+				65CA129820E628820000C841 /* DFVideoPlayer.m in Sources */,
+				65CA12A120E628820000C841 /* DFPhotoKitCollectionViewController.m in Sources */,
+				65CA129E20E628820000C841 /* DFImageView.m in Sources */,
+				65CA129B20E628820000C841 /* DFVideoPreviewCell.m in Sources */,
+				65CA129720E628820000C841 /* DFPhotoSigleAlbumCameraCell.m in Sources */,
 				65CA121B20E6179D0000C841 /* AppDelegate.m in Sources */,
+				65CA129C20E628820000C841 /* DFPhotoKitManager.m in Sources */,
+				65CA129F20E628820000C841 /* DFPhotoModel.m in Sources */,
+				65CA129920E628820000C841 /* DFPhotoPreviewCell.m in Sources */,
+				65CA129520E628820000C841 /* DFPhotoSigleAlbumCell.m in Sources */,
+				65CA129620E628820000C841 /* DFPhotoSigleAlbumViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,25 +454,6 @@
 			targetProxy = 65CA123A20E6179E0000C841 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		65CA121F20E6179D0000C841 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				65CA122020E6179D0000C841 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		65CA122420E6179E0000C841 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				65CA122520E6179E0000C841 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		65CA124020E6179E0000C841 /* Debug */ = {
@@ -481,9 +572,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G3Z423E898;
+				DEVELOPMENT_TEAM = TQ23789V72;
 				INFOPLIST_FILE = DFPhotoKit/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = DF.DFPhotoKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -496,9 +591,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G3Z423E898;
+				DEVELOPMENT_TEAM = TQ23789V72;
 				INFOPLIST_FILE = DFPhotoKit/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = DF.DFPhotoKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -512,7 +611,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G3Z423E898;
 				INFOPLIST_FILE = DFPhotoKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = DF.DFPhotoKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -527,7 +630,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G3Z423E898;
 				INFOPLIST_FILE = DFPhotoKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = DF.DFPhotoKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -541,7 +648,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G3Z423E898;
 				INFOPLIST_FILE = DFPhotoKitUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = DF.DFPhotoKitUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -555,7 +666,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G3Z423E898;
 				INFOPLIST_FILE = DFPhotoKitUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = DF.DFPhotoKitUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

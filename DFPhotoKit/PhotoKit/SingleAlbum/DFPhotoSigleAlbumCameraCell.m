@@ -44,7 +44,6 @@
     }
 }
 
-
 - (AVCaptureSession *)session {
     if (!_session) {
         NSError *err;
