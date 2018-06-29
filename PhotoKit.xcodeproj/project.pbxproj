@@ -9,9 +9,7 @@
 /* Begin PBXBuildFile section */
 		6552EDD220A595150095B643 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6552EDD120A595150095B643 /* AppDelegate.m */; };
 		6552EDD520A595150095B643 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6552EDD420A595150095B643 /* ViewController.m */; };
-		6552EDD820A595150095B643 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6552EDD620A595150095B643 /* Main.storyboard */; };
 		6552EDDA20A595160095B643 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6552EDD920A595160095B643 /* Assets.xcassets */; };
-		6552EDDD20A595160095B643 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6552EDDB20A595160095B643 /* LaunchScreen.storyboard */; };
 		6552EDE020A595160095B643 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6552EDDF20A595160095B643 /* main.m */; };
 		6552EDEA20A595160095B643 /* PhotoKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6552EDE920A595160095B643 /* PhotoKitTests.m */; };
 		6552EDF520A595160095B643 /* PhotoKitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6552EDF420A595160095B643 /* PhotoKitUITests.m */; };
@@ -55,9 +53,7 @@
 		6552EDD120A595150095B643 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		6552EDD320A595150095B643 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		6552EDD420A595150095B643 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		6552EDD720A595150095B643 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6552EDD920A595160095B643 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		6552EDDC20A595160095B643 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6552EDDE20A595160095B643 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6552EDDF20A595160095B643 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6552EDE520A595160095B643 /* PhotoKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,9 +148,7 @@
 				6552EDD120A595150095B643 /* AppDelegate.m */,
 				6552EDD320A595150095B643 /* ViewController.h */,
 				6552EDD420A595150095B643 /* ViewController.m */,
-				6552EDD620A595150095B643 /* Main.storyboard */,
 				6552EDD920A595160095B643 /* Assets.xcassets */,
-				6552EDDB20A595160095B643 /* LaunchScreen.storyboard */,
 				6552EDDE20A595160095B643 /* Info.plist */,
 				6552EDDF20A595160095B643 /* main.m */,
 			);
@@ -365,9 +359,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6552EDDD20A595160095B643 /* LaunchScreen.storyboard in Resources */,
 				6552EDDA20A595160095B643 /* Assets.xcassets in Resources */,
-				6552EDD820A595150095B643 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,25 +454,6 @@
 			targetProxy = 6552EDF120A595160095B643 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		6552EDD620A595150095B643 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6552EDD720A595150095B643 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		6552EDDB20A595160095B643 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6552EDDC20A595160095B643 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		6552EDF720A595160095B643 /* Debug */ = {
