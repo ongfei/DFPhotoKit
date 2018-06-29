@@ -11,6 +11,12 @@
 #import "DFPhotoAlbumModel.h"
 #import "DFPhotoModel.h"
 
+typedef enum : NSUInteger {
+    DFPhotoSizeTypeOriginal = 0,    //原始尺寸 对应model里的imageSize
+    DFPhotoSizeTypeScaleScreen,     //屏幕比率 对应model里的previewImageSize
+    DFPhotoSizeTypeFillScreen      //屏幕填充 对应model里的previewFillImageSize
+} DFPhotoSizeType;
+
 @interface DFPhotoKitDeal : NSObject
 /**
  通过相册model获取image
@@ -51,11 +57,24 @@
  @param saveState 保存状态
  */
 + (void)savePhotoToCustomAlbumWithName:(NSString *)albumName photo:(UIImage *)photo state:(void(^)(BOOL state))saveState;
-
+/**
+ 通过DFPhotoModel获取对应的image数组
+ gif livephoto 都转成了静态图
+ @param scale 缩放比率
+ */
++ (void)getSelectedImageList:(NSArray<DFPhotoModel *> *)modelList type:(DFPhotoSizeType)type scale:(CGFloat)scale success:(void(^)(NSArray<UIImage *> *imageArr))success failed:(void(^)(void))failed;
+/**
+ 通过DFPhotoModel存入本地临时文件
+ type scale 只针对图片 
+ */
++ (void)writeSelectModelListToTempPathWithList:(NSArray<DFPhotoModel *> *)modelList type:(DFPhotoSizeType)type scale:(CGFloat)scale success:(void(^)(NSArray<NSURL *> *allURL,NSArray<NSURL *> *photoURL, NSArray<NSURL *> *videoURL))success failed:(void(^)(void))failed;
 /**
  gif图
  */
 + (UIImage *)animatedGIFWithData:(NSData *)data;
 //相册英文名转中文
 + (NSString *)transFormPhotoTitle:(NSString *)englishName;
+
++ (BOOL)clearTempImageCache;
+
 @end

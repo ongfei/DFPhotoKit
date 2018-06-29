@@ -15,14 +15,19 @@
 		6552EDE020A595160095B643 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6552EDDF20A595160095B643 /* main.m */; };
 		6552EDEA20A595160095B643 /* PhotoKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6552EDE920A595160095B643 /* PhotoKitTests.m */; };
 		6552EDF520A595160095B643 /* PhotoKitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6552EDF420A595160095B643 /* PhotoKitUITests.m */; };
-		6552EE1620A5954C0095B643 /* DFPhotoKitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6552EE0320A5954C0095B643 /* DFPhotoKitManager.m */; };
-		6552EE1720A5954C0095B643 /* DFPhotoKitDeal.m in Sources */ = {isa = PBXBuildFile; fileRef = 6552EE0420A5954C0095B643 /* DFPhotoKitDeal.m */; };
-		6552EE1820A5954C0095B643 /* DFPhotoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6552EE0A20A5954C0095B643 /* DFPhotoModel.m */; };
-		6552EE1920A5954C0095B643 /* DFPhotoPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6552EE0F20A5954C0095B643 /* DFPhotoPreviewViewController.m */; };
-		6552EE1A20A5954C0095B643 /* DFPhotoPreviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6552EE1020A5954C0095B643 /* DFPhotoPreviewCell.m */; };
-		6552EE1B20A5954C0095B643 /* DFPhotoSigleAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6552EE1220A5954C0095B643 /* DFPhotoSigleAlbumViewController.m */; };
-		6552EE1D20A5954C0095B643 /* DFPhotoAlbumModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6552EE1420A5954C0095B643 /* DFPhotoAlbumModel.m */; };
-		6552EE1E20A5954C0095B643 /* DFPhotoKitCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6552EE1520A5954C0095B643 /* DFPhotoKitCollectionViewController.m */; };
+		65CA11C620E5E7E60000C841 /* DFVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CA11A920E5E7E60000C841 /* DFVideoPlayer.m */; };
+		65CA11C720E5E7E60000C841 /* DFPhotoPreviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CA11AC20E5E7E60000C841 /* DFPhotoPreviewCell.m */; };
+		65CA11C820E5E7E60000C841 /* DFPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CA11AE20E5E7E60000C841 /* DFPreviewViewController.m */; };
+		65CA11C920E5E7E60000C841 /* DFVideoPreviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CA11B020E5E7E60000C841 /* DFVideoPreviewCell.m */; };
+		65CA11CA20E5E7E60000C841 /* DFPhotoKitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CA11B320E5E7E60000C841 /* DFPhotoKitManager.m */; };
+		65CA11CB20E5E7E60000C841 /* DFPhotoKitDeal.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CA11B420E5E7E60000C841 /* DFPhotoKitDeal.m */; };
+		65CA11CC20E5E7E60000C841 /* DFImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CA11B720E5E7E60000C841 /* DFImageView.m */; };
+		65CA11CD20E5E7E60000C841 /* DFPhotoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CA11B820E5E7E60000C841 /* DFPhotoModel.m */; };
+		65CA11CE20E5E7E60000C841 /* DFPhotoAlbumModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CA11BB20E5E7E60000C841 /* DFPhotoAlbumModel.m */; };
+		65CA11CF20E5E7E60000C841 /* DFPhotoKitCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CA11BD20E5E7E60000C841 /* DFPhotoKitCollectionViewController.m */; };
+		65CA11D020E5E7E60000C841 /* DFPhotoSigleAlbumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CA11C120E5E7E60000C841 /* DFPhotoSigleAlbumCell.m */; };
+		65CA11D120E5E7E60000C841 /* DFPhotoSigleAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CA11C220E5E7E60000C841 /* DFPhotoSigleAlbumViewController.m */; };
+		65CA11D220E5E7E60000C841 /* DFPhotoSigleAlbumCameraCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CA11C420E5E7E60000C841 /* DFPhotoSigleAlbumCameraCell.m */; };
 		A9E3BCEE676E3FB091E828C4 /* libPods-PhotoKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B1A8C5DE65748BE4D8151C8E /* libPods-PhotoKit.a */; };
 /* End PBXBuildFile section */
 
@@ -61,22 +66,32 @@
 		6552EDF020A595160095B643 /* PhotoKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6552EDF420A595160095B643 /* PhotoKitUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoKitUITests.m; sourceTree = "<group>"; };
 		6552EDF620A595160095B643 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6552EE0320A5954C0095B643 /* DFPhotoKitManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFPhotoKitManager.m; sourceTree = "<group>"; };
-		6552EE0420A5954C0095B643 /* DFPhotoKitDeal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFPhotoKitDeal.m; sourceTree = "<group>"; };
-		6552EE0520A5954C0095B643 /* DFPhotoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPhotoModel.h; sourceTree = "<group>"; };
-		6552EE0620A5954C0095B643 /* DFPhotoAlbumModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPhotoAlbumModel.h; sourceTree = "<group>"; };
-		6552EE0820A5954C0095B643 /* DFPhotoSigleAlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPhotoSigleAlbumViewController.h; sourceTree = "<group>"; };
-		6552EE0920A5954C0095B643 /* DFPhotoKitCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPhotoKitCollectionViewController.h; sourceTree = "<group>"; };
-		6552EE0A20A5954C0095B643 /* DFPhotoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFPhotoModel.m; sourceTree = "<group>"; };
-		6552EE0B20A5954C0095B643 /* DFPhotoKitDeal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPhotoKitDeal.h; sourceTree = "<group>"; };
-		6552EE0C20A5954C0095B643 /* DFPhotoKitManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPhotoKitManager.h; sourceTree = "<group>"; };
-		6552EE0E20A5954C0095B643 /* DFPhotoPreviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPhotoPreviewCell.h; sourceTree = "<group>"; };
-		6552EE0F20A5954C0095B643 /* DFPhotoPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFPhotoPreviewViewController.m; sourceTree = "<group>"; };
-		6552EE1020A5954C0095B643 /* DFPhotoPreviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFPhotoPreviewCell.m; sourceTree = "<group>"; };
-		6552EE1120A5954C0095B643 /* DFPhotoPreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPhotoPreviewViewController.h; sourceTree = "<group>"; };
-		6552EE1220A5954C0095B643 /* DFPhotoSigleAlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFPhotoSigleAlbumViewController.m; sourceTree = "<group>"; };
-		6552EE1420A5954C0095B643 /* DFPhotoAlbumModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFPhotoAlbumModel.m; sourceTree = "<group>"; };
-		6552EE1520A5954C0095B643 /* DFPhotoKitCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFPhotoKitCollectionViewController.m; sourceTree = "<group>"; };
+		65CA11A920E5E7E60000C841 /* DFVideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFVideoPlayer.m; sourceTree = "<group>"; };
+		65CA11AA20E5E7E60000C841 /* DFPreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPreviewViewController.h; sourceTree = "<group>"; };
+		65CA11AB20E5E7E60000C841 /* DFVideoPreviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFVideoPreviewCell.h; sourceTree = "<group>"; };
+		65CA11AC20E5E7E60000C841 /* DFPhotoPreviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFPhotoPreviewCell.m; sourceTree = "<group>"; };
+		65CA11AD20E5E7E60000C841 /* DFVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFVideoPlayer.h; sourceTree = "<group>"; };
+		65CA11AE20E5E7E60000C841 /* DFPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFPreviewViewController.m; sourceTree = "<group>"; };
+		65CA11AF20E5E7E60000C841 /* DFPhotoPreviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPhotoPreviewCell.h; sourceTree = "<group>"; };
+		65CA11B020E5E7E60000C841 /* DFVideoPreviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFVideoPreviewCell.m; sourceTree = "<group>"; };
+		65CA11B220E5E7E60000C841 /* DFImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFImageView.h; sourceTree = "<group>"; };
+		65CA11B320E5E7E60000C841 /* DFPhotoKitManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFPhotoKitManager.m; sourceTree = "<group>"; };
+		65CA11B420E5E7E60000C841 /* DFPhotoKitDeal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFPhotoKitDeal.m; sourceTree = "<group>"; };
+		65CA11B520E5E7E60000C841 /* DFPhotoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPhotoModel.h; sourceTree = "<group>"; };
+		65CA11B620E5E7E60000C841 /* DFPhotoAlbumModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPhotoAlbumModel.h; sourceTree = "<group>"; };
+		65CA11B720E5E7E60000C841 /* DFImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFImageView.m; sourceTree = "<group>"; };
+		65CA11B820E5E7E60000C841 /* DFPhotoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFPhotoModel.m; sourceTree = "<group>"; };
+		65CA11B920E5E7E60000C841 /* DFPhotoKitDeal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPhotoKitDeal.h; sourceTree = "<group>"; };
+		65CA11BA20E5E7E60000C841 /* DFPhotoKitManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPhotoKitManager.h; sourceTree = "<group>"; };
+		65CA11BB20E5E7E60000C841 /* DFPhotoAlbumModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFPhotoAlbumModel.m; sourceTree = "<group>"; };
+		65CA11BD20E5E7E60000C841 /* DFPhotoKitCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFPhotoKitCollectionViewController.m; sourceTree = "<group>"; };
+		65CA11BE20E5E7E60000C841 /* DFPhotoKitCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPhotoKitCollectionViewController.h; sourceTree = "<group>"; };
+		65CA11C020E5E7E60000C841 /* DFPhotoSigleAlbumCameraCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPhotoSigleAlbumCameraCell.h; sourceTree = "<group>"; };
+		65CA11C120E5E7E60000C841 /* DFPhotoSigleAlbumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFPhotoSigleAlbumCell.m; sourceTree = "<group>"; };
+		65CA11C220E5E7E60000C841 /* DFPhotoSigleAlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFPhotoSigleAlbumViewController.m; sourceTree = "<group>"; };
+		65CA11C320E5E7E60000C841 /* DFPhotoSigleAlbumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPhotoSigleAlbumCell.h; sourceTree = "<group>"; };
+		65CA11C420E5E7E60000C841 /* DFPhotoSigleAlbumCameraCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFPhotoSigleAlbumCameraCell.m; sourceTree = "<group>"; };
+		65CA11C520E5E7E60000C841 /* DFPhotoSigleAlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPhotoSigleAlbumViewController.h; sourceTree = "<group>"; };
 		B1A8C5DE65748BE4D8151C8E /* libPods-PhotoKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PhotoKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC1C2577C623019133CD1851 /* Pods-PhotoKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoKit/Pods-PhotoKit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -167,48 +182,66 @@
 		6552EE0220A5954C0095B643 /* PhotoKit */ = {
 			isa = PBXGroup;
 			children = (
-				6552EE1F20A595570095B643 /* Tool */,
-				6552EE0D20A5954C0095B643 /* 图片浏览器 */,
-				6552EE0920A5954C0095B643 /* DFPhotoKitCollectionViewController.h */,
-				6552EE1520A5954C0095B643 /* DFPhotoKitCollectionViewController.m */,
-				6552EE0820A5954C0095B643 /* DFPhotoSigleAlbumViewController.h */,
-				6552EE1220A5954C0095B643 /* DFPhotoSigleAlbumViewController.m */,
+				65CA11A820E5E7E60000C841 /* 图片浏览器 */,
+				65CA11BC20E5E7E60000C841 /* AllAlbum */,
+				65CA11BF20E5E7E60000C841 /* SingleAlbum */,
+				65CA11B120E5E7E60000C841 /* Tool */,
 			);
 			path = PhotoKit;
 			sourceTree = "<group>";
 		};
-		6552EE0D20A5954C0095B643 /* 图片浏览器 */ = {
+		65CA11A820E5E7E60000C841 /* 图片浏览器 */ = {
 			isa = PBXGroup;
 			children = (
-				6552EE1120A5954C0095B643 /* DFPhotoPreviewViewController.h */,
-				6552EE0F20A5954C0095B643 /* DFPhotoPreviewViewController.m */,
-				6552EE0E20A5954C0095B643 /* DFPhotoPreviewCell.h */,
-				6552EE1020A5954C0095B643 /* DFPhotoPreviewCell.m */,
+				65CA11AA20E5E7E60000C841 /* DFPreviewViewController.h */,
+				65CA11AE20E5E7E60000C841 /* DFPreviewViewController.m */,
+				65CA11AD20E5E7E60000C841 /* DFVideoPlayer.h */,
+				65CA11A920E5E7E60000C841 /* DFVideoPlayer.m */,
+				65CA11AB20E5E7E60000C841 /* DFVideoPreviewCell.h */,
+				65CA11B020E5E7E60000C841 /* DFVideoPreviewCell.m */,
+				65CA11AF20E5E7E60000C841 /* DFPhotoPreviewCell.h */,
+				65CA11AC20E5E7E60000C841 /* DFPhotoPreviewCell.m */,
 			);
 			path = "图片浏览器";
 			sourceTree = "<group>";
 		};
-		6552EE1F20A595570095B643 /* Tool */ = {
+		65CA11B120E5E7E60000C841 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				6552EE2020A595720095B643 /* Model */,
-				6552EE0C20A5954C0095B643 /* DFPhotoKitManager.h */,
-				6552EE0320A5954C0095B643 /* DFPhotoKitManager.m */,
-				6552EE0B20A5954C0095B643 /* DFPhotoKitDeal.h */,
-				6552EE0420A5954C0095B643 /* DFPhotoKitDeal.m */,
+				65CA11B220E5E7E60000C841 /* DFImageView.h */,
+				65CA11B720E5E7E60000C841 /* DFImageView.m */,
+				65CA11B520E5E7E60000C841 /* DFPhotoModel.h */,
+				65CA11B820E5E7E60000C841 /* DFPhotoModel.m */,
+				65CA11B920E5E7E60000C841 /* DFPhotoKitDeal.h */,
+				65CA11B420E5E7E60000C841 /* DFPhotoKitDeal.m */,
+				65CA11BA20E5E7E60000C841 /* DFPhotoKitManager.h */,
+				65CA11B320E5E7E60000C841 /* DFPhotoKitManager.m */,
+				65CA11B620E5E7E60000C841 /* DFPhotoAlbumModel.h */,
+				65CA11BB20E5E7E60000C841 /* DFPhotoAlbumModel.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
 		};
-		6552EE2020A595720095B643 /* Model */ = {
+		65CA11BC20E5E7E60000C841 /* AllAlbum */ = {
 			isa = PBXGroup;
 			children = (
-				6552EE0620A5954C0095B643 /* DFPhotoAlbumModel.h */,
-				6552EE1420A5954C0095B643 /* DFPhotoAlbumModel.m */,
-				6552EE0520A5954C0095B643 /* DFPhotoModel.h */,
-				6552EE0A20A5954C0095B643 /* DFPhotoModel.m */,
+				65CA11BE20E5E7E60000C841 /* DFPhotoKitCollectionViewController.h */,
+				65CA11BD20E5E7E60000C841 /* DFPhotoKitCollectionViewController.m */,
 			);
-			path = Model;
+			path = AllAlbum;
+			sourceTree = "<group>";
+		};
+		65CA11BF20E5E7E60000C841 /* SingleAlbum */ = {
+			isa = PBXGroup;
+			children = (
+				65CA11C520E5E7E60000C841 /* DFPhotoSigleAlbumViewController.h */,
+				65CA11C220E5E7E60000C841 /* DFPhotoSigleAlbumViewController.m */,
+				65CA11C320E5E7E60000C841 /* DFPhotoSigleAlbumCell.h */,
+				65CA11C120E5E7E60000C841 /* DFPhotoSigleAlbumCell.m */,
+				65CA11C020E5E7E60000C841 /* DFPhotoSigleAlbumCameraCell.h */,
+				65CA11C420E5E7E60000C841 /* DFPhotoSigleAlbumCameraCell.m */,
+			);
+			path = SingleAlbum;
 			sourceTree = "<group>";
 		};
 		8F8617D20DD66A6554193D7C /* Frameworks */ = {
@@ -380,17 +413,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65CA11CE20E5E7E60000C841 /* DFPhotoAlbumModel.m in Sources */,
+				65CA11D020E5E7E60000C841 /* DFPhotoSigleAlbumCell.m in Sources */,
+				65CA11CC20E5E7E60000C841 /* DFImageView.m in Sources */,
+				65CA11C620E5E7E60000C841 /* DFVideoPlayer.m in Sources */,
+				65CA11CB20E5E7E60000C841 /* DFPhotoKitDeal.m in Sources */,
+				65CA11CF20E5E7E60000C841 /* DFPhotoKitCollectionViewController.m in Sources */,
+				65CA11C820E5E7E60000C841 /* DFPreviewViewController.m in Sources */,
 				6552EDD520A595150095B643 /* ViewController.m in Sources */,
-				6552EE1A20A5954C0095B643 /* DFPhotoPreviewCell.m in Sources */,
-				6552EE1620A5954C0095B643 /* DFPhotoKitManager.m in Sources */,
-				6552EE1B20A5954C0095B643 /* DFPhotoSigleAlbumViewController.m in Sources */,
+				65CA11C720E5E7E60000C841 /* DFPhotoPreviewCell.m in Sources */,
 				6552EDE020A595160095B643 /* main.m in Sources */,
-				6552EE1920A5954C0095B643 /* DFPhotoPreviewViewController.m in Sources */,
-				6552EE1720A5954C0095B643 /* DFPhotoKitDeal.m in Sources */,
-				6552EE1D20A5954C0095B643 /* DFPhotoAlbumModel.m in Sources */,
-				6552EE1820A5954C0095B643 /* DFPhotoModel.m in Sources */,
-				6552EE1E20A5954C0095B643 /* DFPhotoKitCollectionViewController.m in Sources */,
+				65CA11D220E5E7E60000C841 /* DFPhotoSigleAlbumCameraCell.m in Sources */,
+				65CA11CA20E5E7E60000C841 /* DFPhotoKitManager.m in Sources */,
+				65CA11CD20E5E7E60000C841 /* DFPhotoModel.m in Sources */,
+				65CA11C920E5E7E60000C841 /* DFVideoPreviewCell.m in Sources */,
 				6552EDD220A595150095B643 /* AppDelegate.m in Sources */,
+				65CA11D120E5E7E60000C841 /* DFPhotoSigleAlbumViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -454,40 +454,353 @@
     return photoName;
 }
 
-+ (UIImage *)animatedGIFWithData:(NSData *)data {
-    if (!data) {
+#pragma mark -  ----------获取对应的image----------
+/**
+ 通过DFPhotoModel获取对应的image数组
+ @param scale 缩放比率
+ */
++ (void)getSelectedImageList:(NSArray<DFPhotoModel *> *)modelList type:(DFPhotoSizeType)type scale:(CGFloat)scale success:(void(^)(NSArray<UIImage *> *imageArr))success failed:(void(^)(void))failed {
+    if (modelList.count == 0) {
+        return;
+    }
+    NSMutableArray<UIImage *> *imageArr = [NSMutableArray array];
+    for (DFPhotoModel *model in modelList) {
+        if (model.asset) {
+            CGSize size;
+            if (type == DFPhotoSizeTypeOriginal) {
+                size = model.imageSize;
+            }else if (type == DFPhotoSizeTypeScaleScreen) {
+                size = model.previewImageSize;
+            }else {
+                size = model.previewFillImageSize;
+            }
+            [self getHighQualityFormatPhotoForPHAsset:model.asset size:size completion:^(UIImage *image, NSDictionary *info) {
+                [imageArr addObject:[self normalizedImageWithImg:image scale:scale]];
+                if (imageArr.count == modelList.count) {
+                    success(imageArr);
+                }
+            } error:^(NSDictionary *info) {
+                failed();
+            }];
+        }
+    }
+    
+}
+/**
+ 通过DFPhotoModel存入本地临时文件
+ */
++ (void)writeSelectModelListToTempPathWithList:(NSArray<DFPhotoModel *> *)modelList type:(DFPhotoSizeType)type scale:(CGFloat)scale success:(void(^)(NSArray<NSURL *> *allURL,NSArray<NSURL *> *photoURL, NSArray<NSURL *> *videoURL))success failed:(void(^)(void))failed {
+    if (modelList.count == 0) {
+        return;
+    }
+    __block __weak typeof(self) weakSelf = self;
+
+    NSMutableArray *allUrl = [NSMutableArray arrayWithCapacity:modelList.count];
+    NSMutableArray *photoUrl = [NSMutableArray array];
+    NSMutableArray *videoUrl = [NSMutableArray array];
+
+    for (DFPhotoModel *model in modelList) {
+        if (model.type == DFPhotoModelMediaTypeVideo) {
+//            视频处理
+            __block __weak typeof(self) weakSelf = self;
+            [self getAVAssetWithPHAsset:model.asset completion:^(AVAsset *asset) {
+                
+                [weakSelf compressedVideoWithMediumQualityWriteToTemp:asset fileName:[model.asset.localIdentifier componentsSeparatedByString:@"/"].firstObject success:^(NSURL *url) {
+                    
+                    [allUrl addObject:url];
+                    [videoUrl addObject:url];
+                    if (allUrl.count == modelList.count) {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            success(allUrl,photoUrl,videoUrl);
+                        });
+                    }
+                    
+                } failure:^{
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        failed();
+                    });
+                }];
+                
+            } failed:^{
+                failed();
+            }];
+            
+        }else if (model.type == DFPhotoModelMediaTypePhotoGif) {
+            
+            [self getImageData:model.asset completion:^(NSData *imageData, UIImageOrientation orientation) {
+                
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                    
+                    NSString *fileName = [[model.asset.localIdentifier componentsSeparatedByString:@"/"].firstObject stringByAppendingString:[NSString stringWithFormat:@".gif"]];
+                    
+                    NSString *fullPathToFile = [NSTemporaryDirectory() stringByAppendingPathComponent:fileName];
+                    
+                    if ([imageData writeToFile:fullPathToFile atomically:YES]) {
+                        [allUrl addObject:[NSURL fileURLWithPath:fullPathToFile]];
+                        [photoUrl addObject:[NSURL fileURLWithPath:fullPathToFile]];
+                        if (allUrl.count == modelList.count) {
+                            dispatch_async(dispatch_get_main_queue(), ^{
+                                success(allUrl,photoUrl,videoUrl);
+                            });
+                        }
+                        
+                    }else {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            failed();
+                        });
+                    }
+                });
+            } error:^{
+                failed();
+            }];
+            
+        }else {
+            
+            CGSize size;
+            if (type == DFPhotoSizeTypeOriginal) {
+                size = model.imageSize;
+            }else if (type == DFPhotoSizeTypeScaleScreen) {
+                size = model.previewImageSize;
+            }else {
+                size = model.previewFillImageSize;
+            }
+
+            [self getHighQualityFormatPhotoForPHAsset:model.asset size:size completion:^(UIImage *image, NSDictionary *info) {
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                    UIImage *tempImage = image;
+                    if (tempImage.imageOrientation != UIImageOrientationUp) {
+                        tempImage = [weakSelf normalizedImageWithImg:tempImage scale:scale];
+                    }
+                    NSData *imageData;
+                    NSString *suffix;
+                    if (UIImagePNGRepresentation(tempImage)) {
+                        //返回为png图像。
+                        imageData = UIImagePNGRepresentation(tempImage);
+                        suffix = @"png";
+                    }else {
+                        //返回为JPEG图像。
+                        imageData = UIImageJPEGRepresentation(tempImage, 0.8);
+                        suffix = @"jpeg";
+                    }
+
+                    NSString *fileName = [[model.asset.localIdentifier componentsSeparatedByString:@"/"].firstObject stringByAppendingString:[NSString stringWithFormat:@".%@",suffix]];
+                    
+                    NSString *fullPathToFile = [NSTemporaryDirectory() stringByAppendingPathComponent:fileName];
+                    
+                    if ([imageData writeToFile:fullPathToFile atomically:YES]) {
+                        [allUrl addObject:[NSURL fileURLWithPath:fullPathToFile]];
+                        [photoUrl addObject:[NSURL fileURLWithPath:fullPathToFile]];
+                        if (allUrl.count == modelList.count) {
+                            dispatch_async(dispatch_get_main_queue(), ^{
+                                success(allUrl,photoUrl,videoUrl);
+                            });
+                        }
+                    }else {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            failed();
+                        });
+                    }
+                });
+            } error:^(NSDictionary *info) {
+                failed();
+            }];
+        }
+    }
+}
+
++ (AVAssetExportSession *)compressedVideoWithMediumQualityWriteToTemp:(id)obj fileName:(NSString *)filename success:(void (^)(NSURL *url))success failure:(void (^)(void))failure {
+    AVAsset *avAsset;
+    if ([obj isKindOfClass:[AVAsset class]]) {
+        avAsset = obj;
+    }else {
+        avAsset = [AVURLAsset URLAssetWithURL:obj options:nil];
+    }
+    
+    NSArray *compatiblePresets = [AVAssetExportSession exportPresetsCompatibleWithAsset:avAsset];
+    if ([compatiblePresets containsObject:AVAssetExportPresetHighestQuality]) {
+        AVAssetExportSession *exportSession = [[AVAssetExportSession alloc] initWithAsset:avAsset presetName:AVAssetExportPresetMediumQuality];
+        
+        NSString *fileName = [filename stringByAppendingString:@".mp4"];
+        NSString *fullPathToFile = [NSTemporaryDirectory() stringByAppendingPathComponent:fileName];
+        NSURL *videoURL = [NSURL fileURLWithPath:fullPathToFile];
+        
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        
+        if([fileManager fileExistsAtPath:fullPathToFile]) {
+            success(videoURL);
+            return nil;
+        }else {
+            exportSession.outputURL = videoURL;
+            exportSession.outputFileType = AVFileTypeMPEG4;
+            exportSession.shouldOptimizeForNetworkUse = YES;
+            
+            [exportSession exportAsynchronouslyWithCompletionHandler:^{
+                if ([exportSession status] == AVAssetExportSessionStatusCompleted) {
+                    if (success) {
+                        success(videoURL);
+                    }
+                }else if ([exportSession status] == AVAssetExportSessionStatusFailed){
+                    if (failure) {
+                        failure();
+                    }
+                }else if ([exportSession status] == AVAssetExportSessionStatusCancelled) {
+                    if (failure) {
+                        failure();
+                    }
+                }
+            }];
+            return exportSession;
+        }
+        
+    }else {
+        if (failure) {
+            failure();
+        }
         return nil;
     }
-    //通过CFData读取gif文件的数据
-    CGImageSourceRef source = CGImageSourceCreateWithData((__bridge CFDataRef)data, NULL);
-    //获取gif文件的帧数
-    size_t count = CGImageSourceGetCount(source);
-    UIImage *animatedImage;
-    if (count <= 1) {
-        animatedImage = [[UIImage alloc] initWithData:data];
+}
+
++ (BOOL)clearTempImageCache {
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSArray *subPaths = [fileManager contentsOfDirectoryAtPath:NSTemporaryDirectory() error:nil];
+    BOOL result = YES;
+    for (NSString *subPath in subPaths) {
+        NSString *filePath = [NSTemporaryDirectory() stringByAppendingPathComponent:subPath];
+        BOOL isSucc = [fileManager removeItemAtPath:filePath error:nil];
+        if (!isSucc) {
+            result = NO;
+            return result;
+        }
     }
-    else {//大于一张图片时
-        NSMutableArray *images = [NSMutableArray array];
-        //设置gif播放的时间
-        NSTimeInterval duration = 0.0f;
-        for (size_t i = 0; i < count; i++) {
-            //获取gif指定帧的像素位图
-            CGImageRef image = CGImageSourceCreateImageAtIndex(source, i, NULL);
-            if (!image) {
-                continue;
+    return result;
+}
+
++ (UIImage *)normalizedImageWithImg:(UIImage *)img scale:(CGFloat)scale {
+    
+    if (img.imageOrientation == UIImageOrientationUp) return img;
+    
+    UIGraphicsBeginImageContextWithOptions(img.size, NO, scale);
+    [img drawInRect:(CGRect){0, 0, img.size}];
+    UIImage *normalizedImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return normalizedImage;
+}
+
+#pragma mark -  ----------gif图 转自yykit----------
+
+static NSTimeInterval _yy_CGImageSourceGetGIFFrameDelayAtIndex(CGImageSourceRef source, size_t index) {
+    NSTimeInterval delay = 0;
+    CFDictionaryRef dic = CGImageSourceCopyPropertiesAtIndex(source, index, NULL);
+    if (dic) {
+        CFDictionaryRef dicGIF = CFDictionaryGetValue(dic, kCGImagePropertyGIFDictionary);
+        if (dicGIF) {
+            NSNumber *num = CFDictionaryGetValue(dicGIF, kCGImagePropertyGIFUnclampedDelayTime);
+            if (num.doubleValue <= __FLT_EPSILON__) {
+                num = CFDictionaryGetValue(dicGIF, kCGImagePropertyGIFDelayTime);
             }
-            //获取每张图的播放时间
-            duration += [self frameDurationAtIndex:i source:source];
-            [images addObject:[UIImage imageWithCGImage:image scale:[UIScreen mainScreen].scale orientation:UIImageOrientationUp]];
-            CGImageRelease(image);
+            delay = num.doubleValue;
         }
-        if (!duration) {//如果播放时间为空
-            duration = (1.0f / 10.0f) * count;
+        CFRelease(dic);
+    }
+    
+    // http://nullsleep.tumblr.com/post/16524517190/animated-gif-minimum-frame-delay-browser-compatibility
+    if (delay < 0.02) delay = 0.1;
+    return delay;
+}
+
++ (UIImage *)animatedGIFWithData:(NSData *)data {
+    CGImageSourceRef source = CGImageSourceCreateWithData((__bridge CFTypeRef)(data), NULL);
+    if (!source) return nil;
+    
+    size_t count = CGImageSourceGetCount(source);
+    if (count <= 1) {
+        CFRelease(source);
+        return [UIImage imageWithData:data scale:1.0];
+    }
+    
+    NSUInteger frames[count];
+    double oneFrameTime = 1 / 50.0; // 50 fps
+    NSTimeInterval totalTime = 0;
+    NSUInteger totalFrame = 0;
+    NSUInteger gcdFrame = 0;
+    for (size_t i = 0; i < count; i++) {
+        NSTimeInterval delay = _yy_CGImageSourceGetGIFFrameDelayAtIndex(source, i);
+        totalTime += delay;
+        NSInteger frame = lrint(delay / oneFrameTime);
+        if (frame < 1) frame = 1;
+        frames[i] = frame;
+        totalFrame += frames[i];
+        if (i == 0) gcdFrame = frames[i];
+        else {
+            NSUInteger frame = frames[i], tmp;
+            if (frame < gcdFrame) {
+                tmp = frame; frame = gcdFrame; gcdFrame = tmp;
+            }
+            while (true) {
+                tmp = frame % gcdFrame;
+                if (tmp == 0) break;
+                frame = gcdFrame;
+                gcdFrame = tmp;
+            }
         }
-        animatedImage = [UIImage animatedImageWithImages:images duration:duration];
+    }
+    NSMutableArray *array = [NSMutableArray new];
+    for (size_t i = 0; i < count; i++) {
+        CGImageRef imageRef = CGImageSourceCreateImageAtIndex(source, i, NULL);
+        if (!imageRef) {
+            CFRelease(source);
+            return nil;
+        }
+        size_t width = CGImageGetWidth(imageRef);
+        size_t height = CGImageGetHeight(imageRef);
+        if (width == 0 || height == 0) {
+            CFRelease(source);
+            CFRelease(imageRef);
+            return nil;
+        }
+        
+        CGImageAlphaInfo alphaInfo = CGImageGetAlphaInfo(imageRef) & kCGBitmapAlphaInfoMask;
+        BOOL hasAlpha = NO;
+        if (alphaInfo == kCGImageAlphaPremultipliedLast ||
+            alphaInfo == kCGImageAlphaPremultipliedFirst ||
+            alphaInfo == kCGImageAlphaLast ||
+            alphaInfo == kCGImageAlphaFirst) {
+            hasAlpha = YES;
+        }
+        // BGRA8888 (premultiplied) or BGRX8888
+        // same as UIGraphicsBeginImageContext() and -[UIView drawRect:]
+        CGBitmapInfo bitmapInfo = kCGBitmapByteOrder32Host;
+        bitmapInfo |= hasAlpha ? kCGImageAlphaPremultipliedFirst : kCGImageAlphaNoneSkipFirst;
+        CGColorSpaceRef space = CGColorSpaceCreateDeviceRGB();
+        CGContextRef context = CGBitmapContextCreate(NULL, width, height, 8, 0, space, bitmapInfo);
+        CGColorSpaceRelease(space);
+        if (!context) {
+            CFRelease(source);
+            CFRelease(imageRef);
+            return nil;
+        }
+        CGContextDrawImage(context, CGRectMake(0, 0, width, height), imageRef); // decode
+        CGImageRef decoded = CGBitmapContextCreateImage(context);
+        CFRelease(context);
+        if (!decoded) {
+            CFRelease(source);
+            CFRelease(imageRef);
+            return nil;
+        }
+        UIImage *image = [UIImage imageWithCGImage:decoded scale:1.0 orientation:UIImageOrientationUp];
+        CGImageRelease(imageRef);
+        CGImageRelease(decoded);
+        if (!image) {
+            CFRelease(source);
+            return nil;
+        }
+        for (size_t j = 0, max = frames[i] / gcdFrame; j < max; j++) {
+            [array addObject:image];
+        }
     }
     CFRelease(source);
-    return animatedImage;
+    UIImage *image = [UIImage animatedImageWithImages:array duration:totalTime];
+    return image;
 }
 
 + (float)frameDurationAtIndex:(NSUInteger)index source:(CGImageSourceRef)source {
@@ -516,5 +829,34 @@
     return frameDuration;
 }
 
+
+//            拆分livephoto
+//            NSArray *assetResources = [PHAssetResource assetResourcesForAsset:photoM.asset];
+//
+//            PHAssetResource *resource;
+//
+//            for (PHAssetResource *assetRes in assetResources) {
+//
+//                if (assetRes.type == PHAssetResourceTypePairedVideo ||
+//
+//                    assetRes.type == PHAssetResourceTypeVideo) {
+//
+//                    resource = assetRes;
+//
+//                }
+//            }
+//            合并livephoto
+//            NSURL *photoURL = [NSURL fileURLWithPath:photoURLstring];//
+//            NSURL *videoURL = [NSURL fileURLWithPath:videoURLstring];//
+//            [[PHPhotoLibrary sharedPhotoLibrary] performChanges: ^{
+//                PHAssetCreationRequest * request = [PHAssetCreationRequest creationRequestForAsset];
+//                [request addResourceWithType: PHAssetResourceTypePhoto fileURL: photoURL options: nil];
+//                [request addResourceWithType: PHAssetResourceTypePairedVideo fileURL: videoURL options: nil];
+//            } completionHandler: ^(BOOL success, NSError * _Nullable error) {
+//                if (success) { [self alertMessage: @"LivePhotos 已经保存至相册!"];
+//                } else {
+//                    NSLog(@"error: %@", error);
+//                }
+//            }];
 
 @end

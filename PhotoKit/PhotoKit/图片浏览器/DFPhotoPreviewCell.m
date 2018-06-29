@@ -8,11 +8,13 @@
 
 #import "DFPhotoPreviewCell.h"
 #import <Masonry.h>
+#import "DFVideoPlayer.h"
 
 #define kWidth [UIScreen mainScreen].bounds.size.width
 #define kHeight [UIScreen mainScreen].bounds.size.height
 
 @interface DFPhotoPreviewCell ()<UIScrollViewDelegate>
+
 
 @end
 
@@ -28,7 +30,7 @@
         self.scrollBg.delegate = self;
 
         
-        self.imageV = [[UIImageView alloc] init];
+        self.imageV = [[DFImageView alloc] init];
         self.imageV.contentMode = UIViewContentModeScaleAspectFill;
         [self.imageV setClipsToBounds:YES];
         [self.scrollBg addSubview:self.imageV];
@@ -36,7 +38,6 @@
         
         [self.scrollBg addSubview:self.livePhoto];
         self.livePhoto.center = self.scrollBg.center;
-
         
         self.imageV.hidden = YES;
         self.livePhoto.hidden = YES;
@@ -62,7 +63,9 @@
 }
 
 - (void)doubleTap:(UITapGestureRecognizer *)tap {
-
+    if (self.photoM == nil) {
+        return;
+    }
     if (self.scrollBg.zoomScale > 1.0) {
         
         [self.scrollBg setZoomScale:1.0 animated:YES];
@@ -79,6 +82,9 @@
         if (height == self.photoM.previewViewSize.height && width == self.photoM.previewViewSize.width) {
             self.scrollBg.maximumZoomScale = 2.0;
         }
+        if (self.scrollBg.maximumZoomScale < 1.5) {
+            self.scrollBg.maximumZoomScale = 1.5;
+        }
         
         CGPoint touchPoint;
         if (self.photoM.type == DFPhotoModelMediaTypeLivePhoto) {
@@ -92,11 +98,13 @@
         
         [self.scrollBg zoomToRect:CGRectMake(touchPoint.x - xsize/2, touchPoint.y - ysize/2, xsize, ysize) animated:YES];
         
-        [DFPhotoKitDeal getHighQualityFormatPhotoForPHAsset:self.photoM.asset size:CGSizeMake(self.photoM.asset.pixelWidth, self.photoM.asset.pixelHeight) completion:^(UIImage *image, NSDictionary *info) {
-            self.imageV.image = image;
-        } error:^(NSDictionary *info) {
-            
-        }];
+        if (self.photoM.type == DFPhotoModelMediaTypePhoto) {
+            [DFPhotoKitDeal getHighQualityFormatPhotoForPHAsset:self.photoM.asset size:CGSizeMake(self.photoM.asset.pixelWidth, self.photoM.asset.pixelHeight) completion:^(UIImage *image, NSDictionary *info) {
+                self.imageV.image = image;
+            } error:^(NSDictionary *info) {
+                
+            }];
+        }
     }
 }
 
@@ -113,17 +121,11 @@
     _photoM = photoM;
     self.imageV.hidden = YES;
     self.livePhoto.hidden = YES;
+
     [self stopEven];
 
-    
-    if (photoM.isPanorama) {
-        NSLog(@"长图-----------");
-    }else{
-        NSLog(@"不是=---长图-----------");
-    }
-    
-    self.imageV.frame = CGRectMake(0, 0, photoM.previewViewSize.width, photoM.previewViewSize.height);
-    self.livePhoto.frame = CGRectMake(0, 0, photoM.previewViewSize.width, photoM.previewViewSize.height);
+    self.imageV.frame = CGRectMake(0, 0, photoM.previewViewFillSize.width, photoM.previewViewFillSize.height);
+    self.livePhoto.frame = CGRectMake(0, 0, photoM.previewViewFillSize.width, photoM.previewViewFillSize.height);
     self.livePhoto.center = self.scrollBg.center;
     self.imageV.center = self.scrollBg.center;
 
@@ -141,6 +143,7 @@
             break;
         case DFPhotoModelMediaTypeLivePhoto: {
             self.livePhoto.hidden = NO;
+            
             [DFPhotoKitDeal getLivePhotoForAsset:photoM.asset size:photoM.previewFillImageSize completion:^(PHLivePhoto *livePhoto) {
                
                 self.livePhoto.livePhoto = livePhoto;
@@ -152,38 +155,29 @@
             break;
         case DFPhotoModelMediaTypePhotoGif: {
             self.imageV.hidden = NO;
+            
             [DFPhotoKitDeal getImageData:photoM.asset completion:^(NSData *imageData, UIImageOrientation orientation) {
-               
-                self.imageV.image = [DFPhotoKitDeal animatedGIFWithData:imageData];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                   
+                    [self.imageV setGifImageWithData:imageData];
+                });
                 
             } error:^{
                 NSLog(@"加载失败");
             }];
-            
-        }
-            break;
-        case DFPhotoModelMediaTypeVideo: {
-            NSLog(@"this's 视频");
         }
             break;
             
         default:
             break;
     }
-    
-    //    [DFPhotoKitDeal getPhotoForPHAsset:photoM.asset size:CGSizeMake((([UIScreen mainScreen].bounds.size.width - 25) / 4)*1.5, (([UIScreen mainScreen].bounds.size.width - 25) / 4)*1.5) completion:^(UIImage *image, NSDictionary *info) {
-    //        self.imageV.image = image;
-    //    }];
-    
 }
 
 - (void)stopEven {
     [self resetScale];
-    if (self.photoM.type == DFPhotoModelMediaTypePhotoGif) {
-//        self.imageV.image = nil;
-    }
-}
+    self.scrollBg.scrollEnabled = YES;
 
+}
 - (void)resetScale {
     [self.scrollBg setZoomScale:1.0 animated:NO];
 }
@@ -209,8 +203,6 @@
 
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView {
     
-    NSLog(@"%f-----%f",scrollView.zoomScale,scrollView.maximumZoomScale);
-    
     CGFloat offsetX = (scrollView.frame.size.width > scrollView.contentSize.width) ? (scrollView.frame.size.width - scrollView.contentSize.width) * 0.5 : 0.0;
     CGFloat offsetY = (scrollView.frame.size.height > scrollView.contentSize.height) ? (scrollView.frame.size.height - scrollView.contentSize.height) * 0.5 : 0.0;
     
@@ -219,13 +211,6 @@
     }else {
         self.imageV.center = CGPointMake(scrollView.contentSize.width * 0.5 + offsetX, scrollView.contentSize.height * 0.5 + offsetY);
     }
-    
-//    [DFPhotoKitDeal getHighQualityFormatPhotoForPHAsset:self.photoM.asset size:CGSizeMake(self.photoM.asset.pixelWidth * 2, self.photoM.asset.pixelHeight * 2) completion:^(UIImage *image, NSDictionary *info) {
-//        self.imageV.image = image;
-//    } error:^(NSDictionary *info) {
-//        
-//    }];
-  
 }
 
 @end

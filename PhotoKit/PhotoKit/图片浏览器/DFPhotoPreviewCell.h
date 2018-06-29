@@ -10,11 +10,12 @@
 #import <PhotosUI/PhotosUI.h>
 #import "DFPhotoModel.h"
 #import "DFPhotoKitDeal.h"
+#import "DFImageView.h"
 
 @interface DFPhotoPreviewCell : UICollectionViewCell
 
 @property (nonatomic, strong) UIScrollView *scrollBg;
-@property (nonatomic, strong) UIImageView *imageV;
+@property (nonatomic, strong) DFImageView *imageV;
 
 @property (nonatomic, strong) PHLivePhotoView *livePhoto;
 
@@ -24,5 +25,4 @@
 
 - (void)stopEven;
 - (void)resetScale;
-
 @end

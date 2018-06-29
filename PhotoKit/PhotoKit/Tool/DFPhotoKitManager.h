@@ -11,7 +11,15 @@
 #import "DFPhotoAlbumModel.h"
 #import "DFPhotoKitDeal.h"
 
+typedef enum : NSUInteger {
+    DFPhotoKitManagerSelectedTypePhotoAndVideo,     // 图片和视频一起显示
+    DFPhotoKitManagerSelectedTypePhoto,        // 只显示图片
+    DFPhotoKitManagerSelectedTypeVideo,        // 只显示视频
+} DFPhotoKitManagerSelectedType;
+
 @interface DFPhotoKitManager : NSObject
+
+@property (assign, nonatomic) DFPhotoKitManagerSelectedType type;
 /**
  获取相册权限
  @param stateBlock yes 同意
@@ -26,11 +34,11 @@
  
  @param albums 相册集合
  */
-- (void)getAllPhotoAlbums:(void(^)(NSArray *albums))albums;
+- (void)getAllPhotoAlbums:(void(^)(NSArray<DFPhotoAlbumModel *> *albums))albums;
 /**
  根据某个相册模型获取照片列表
  
  @param albumModel 相册模型
  */
-- (void)getPhotoListWithAlbumModel:(DFPhotoAlbumModel *)albumModel complete:(void (^)(NSArray *allList, NSArray *photoList, NSArray *videoList))complete;
+- (void)getPhotoListWithAlbumModel:(DFPhotoAlbumModel *)albumModel complete:(void (^)(NSArray<DFPhotoModel *> *allList, NSArray<DFPhotoModel *> *photoList, NSArray<DFPhotoModel *> *videoList))complete;
 @end

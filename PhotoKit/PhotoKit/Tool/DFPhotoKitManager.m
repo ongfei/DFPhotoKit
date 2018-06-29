@@ -51,7 +51,7 @@
  
  @param albums 相册集合
  */
-- (void)getAllPhotoAlbums:(void(^)(NSArray *albums))albums {
+- (void)getAllPhotoAlbums:(void(^)(NSArray<DFPhotoAlbumModel *> *albums))albums {
 
     if (self.albums.count > 0) [self.albums removeAllObjects];
     // 获取系统智能相册
@@ -61,7 +61,11 @@
         // 是否按创建时间排序
         PHFetchOptions *option = [[PHFetchOptions alloc] init];
         option.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:YES]];
-
+        if (self.type == DFPhotoKitManagerSelectedTypePhoto) {
+            option.predicate = [NSPredicate predicateWithFormat:@"mediaType == %ld", PHAssetMediaTypeImage];
+        }else if (self.type == DFPhotoKitManagerSelectedTypeVideo) {
+            option.predicate = [NSPredicate predicateWithFormat:@"mediaType == %ld", PHAssetMediaTypeVideo];
+        }
         // 获取照片集合
         PHFetchResult *result = [PHAsset fetchAssetsInAssetCollection:collection options:option];
         
@@ -87,7 +91,11 @@
         // 是否按创建时间排序
         PHFetchOptions *option = [[PHFetchOptions alloc] init];
         option.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:YES]];
-
+        if (self.type == DFPhotoKitManagerSelectedTypePhoto) {
+            option.predicate = [NSPredicate predicateWithFormat:@"mediaType == %ld", PHAssetMediaTypeImage];
+        }else if (self.type == DFPhotoKitManagerSelectedTypeVideo) {
+            option.predicate = [NSPredicate predicateWithFormat:@"mediaType == %ld", PHAssetMediaTypeVideo];
+        }
         // 获取照片集合
         PHFetchResult *result = [PHAsset fetchAssetsInAssetCollection:collection options:option];
         
@@ -112,7 +120,7 @@
  
  @param albumModel 相册模型
  */
-- (void)getPhotoListWithAlbumModel:(DFPhotoAlbumModel *)albumModel complete:(void (^)(NSArray *allList, NSArray *photoList, NSArray *videoList))complete {
+- (void)getPhotoListWithAlbumModel:(DFPhotoAlbumModel *)albumModel complete:(void (^)(NSArray<DFPhotoModel *> *allList, NSArray<DFPhotoModel *> *photoList, NSArray<DFPhotoModel *> *videoList))complete {
     
     NSMutableArray *allArray = [NSMutableArray array];
     NSMutableArray *videoArray = [NSMutableArray array];

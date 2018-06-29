@@ -1,5 +1,7 @@
 target 'PhotoKit' do
 
 pod 'Masonry'
+pod 'FLAnimatedImage'
+pod 'SDWebImage'
 
 end
