@@ -1,0 +1,608 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		65CA121B20E6179D0000C841 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CA121A20E6179D0000C841 /* AppDelegate.m */; };
+		65CA121E20E6179D0000C841 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CA121D20E6179D0000C841 /* ViewController.m */; };
+		65CA122120E6179D0000C841 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65CA121F20E6179D0000C841 /* Main.storyboard */; };
+		65CA122320E6179E0000C841 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65CA122220E6179E0000C841 /* Assets.xcassets */; };
+		65CA122620E6179E0000C841 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65CA122420E6179E0000C841 /* LaunchScreen.storyboard */; };
+		65CA122920E6179E0000C841 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CA122820E6179E0000C841 /* main.m */; };
+		65CA123320E6179E0000C841 /* DFPhotoKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CA123220E6179E0000C841 /* DFPhotoKitTests.m */; };
+		65CA123E20E6179E0000C841 /* DFPhotoKitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CA123D20E6179E0000C841 /* DFPhotoKitUITests.m */; };
+		9B631905816F009071E656D1 /* libPods-DFPhotoKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 412174EBF67473BE24674891 /* libPods-DFPhotoKit.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		65CA122F20E6179E0000C841 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65CA120E20E6179D0000C841 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65CA121520E6179D0000C841;
+			remoteInfo = DFPhotoKit;
+		};
+		65CA123A20E6179E0000C841 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65CA120E20E6179D0000C841 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65CA121520E6179D0000C841;
+			remoteInfo = DFPhotoKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		412174EBF67473BE24674891 /* libPods-DFPhotoKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DFPhotoKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		65CA121620E6179D0000C841 /* DFPhotoKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DFPhotoKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		65CA121920E6179D0000C841 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		65CA121A20E6179D0000C841 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		65CA121C20E6179D0000C841 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		65CA121D20E6179D0000C841 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		65CA122020E6179D0000C841 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		65CA122220E6179E0000C841 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		65CA122520E6179E0000C841 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		65CA122720E6179E0000C841 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65CA122820E6179E0000C841 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		65CA122E20E6179E0000C841 /* DFPhotoKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DFPhotoKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		65CA123220E6179E0000C841 /* DFPhotoKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DFPhotoKitTests.m; sourceTree = "<group>"; };
+		65CA123420E6179E0000C841 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65CA123920E6179E0000C841 /* DFPhotoKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DFPhotoKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		65CA123D20E6179E0000C841 /* DFPhotoKitUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DFPhotoKitUITests.m; sourceTree = "<group>"; };
+		65CA123F20E6179E0000C841 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74A97D7F103170A3F959E3C5 /* Pods-DFPhotoKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DFPhotoKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DFPhotoKit/Pods-DFPhotoKit.debug.xcconfig"; sourceTree = "<group>"; };
+		F78771FA71ADE6D623439423 /* Pods-DFPhotoKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DFPhotoKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-DFPhotoKit/Pods-DFPhotoKit.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		65CA121320E6179D0000C841 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B631905816F009071E656D1 /* libPods-DFPhotoKit.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65CA122B20E6179E0000C841 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65CA123620E6179E0000C841 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		65CA120D20E6179D0000C841 = {
+			isa = PBXGroup;
+			children = (
+				65CA121820E6179D0000C841 /* DFPhotoKit */,
+				65CA123120E6179E0000C841 /* DFPhotoKitTests */,
+				65CA123C20E6179E0000C841 /* DFPhotoKitUITests */,
+				65CA121720E6179D0000C841 /* Products */,
+				9FC79D6BF7CEAEB113830253 /* Pods */,
+				DE078774D99592055BFB7B79 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		65CA121720E6179D0000C841 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				65CA121620E6179D0000C841 /* DFPhotoKit.app */,
+				65CA122E20E6179E0000C841 /* DFPhotoKitTests.xctest */,
+				65CA123920E6179E0000C841 /* DFPhotoKitUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		65CA121820E6179D0000C841 /* DFPhotoKit */ = {
+			isa = PBXGroup;
+			children = (
+				65CA121920E6179D0000C841 /* AppDelegate.h */,
+				65CA121A20E6179D0000C841 /* AppDelegate.m */,
+				65CA121C20E6179D0000C841 /* ViewController.h */,
+				65CA121D20E6179D0000C841 /* ViewController.m */,
+				65CA121F20E6179D0000C841 /* Main.storyboard */,
+				65CA122220E6179E0000C841 /* Assets.xcassets */,
+				65CA122420E6179E0000C841 /* LaunchScreen.storyboard */,
+				65CA122720E6179E0000C841 /* Info.plist */,
+				65CA122820E6179E0000C841 /* main.m */,
+			);
+			path = DFPhotoKit;
+			sourceTree = "<group>";
+		};
+		65CA123120E6179E0000C841 /* DFPhotoKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				65CA123220E6179E0000C841 /* DFPhotoKitTests.m */,
+				65CA123420E6179E0000C841 /* Info.plist */,
+			);
+			path = DFPhotoKitTests;
+			sourceTree = "<group>";
+		};
+		65CA123C20E6179E0000C841 /* DFPhotoKitUITests */ = {
+			isa = PBXGroup;
+			children = (
+				65CA123D20E6179E0000C841 /* DFPhotoKitUITests.m */,
+				65CA123F20E6179E0000C841 /* Info.plist */,
+			);
+			path = DFPhotoKitUITests;
+			sourceTree = "<group>";
+		};
+		9FC79D6BF7CEAEB113830253 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				74A97D7F103170A3F959E3C5 /* Pods-DFPhotoKit.debug.xcconfig */,
+				F78771FA71ADE6D623439423 /* Pods-DFPhotoKit.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DE078774D99592055BFB7B79 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				412174EBF67473BE24674891 /* libPods-DFPhotoKit.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		65CA121520E6179D0000C841 /* DFPhotoKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65CA124220E6179E0000C841 /* Build configuration list for PBXNativeTarget "DFPhotoKit" */;
+			buildPhases = (
+				238E193C309809D02BDE5A0D /* [CP] Check Pods Manifest.lock */,
+				65CA121220E6179D0000C841 /* Sources */,
+				65CA121320E6179D0000C841 /* Frameworks */,
+				65CA121420E6179D0000C841 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DFPhotoKit;
+			productName = DFPhotoKit;
+			productReference = 65CA121620E6179D0000C841 /* DFPhotoKit.app */;
+			productType = "com.apple.product-type.application";
+		};
+		65CA122D20E6179E0000C841 /* DFPhotoKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65CA124520E6179E0000C841 /* Build configuration list for PBXNativeTarget "DFPhotoKitTests" */;
+			buildPhases = (
+				65CA122A20E6179E0000C841 /* Sources */,
+				65CA122B20E6179E0000C841 /* Frameworks */,
+				65CA122C20E6179E0000C841 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				65CA123020E6179E0000C841 /* PBXTargetDependency */,
+			);
+			name = DFPhotoKitTests;
+			productName = DFPhotoKitTests;
+			productReference = 65CA122E20E6179E0000C841 /* DFPhotoKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		65CA123820E6179E0000C841 /* DFPhotoKitUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65CA124820E6179E0000C841 /* Build configuration list for PBXNativeTarget "DFPhotoKitUITests" */;
+			buildPhases = (
+				65CA123520E6179E0000C841 /* Sources */,
+				65CA123620E6179E0000C841 /* Frameworks */,
+				65CA123720E6179E0000C841 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				65CA123B20E6179E0000C841 /* PBXTargetDependency */,
+			);
+			name = DFPhotoKitUITests;
+			productName = DFPhotoKitUITests;
+			productReference = 65CA123920E6179E0000C841 /* DFPhotoKitUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		65CA120E20E6179D0000C841 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = ongfei;
+				TargetAttributes = {
+					65CA121520E6179D0000C841 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					65CA122D20E6179E0000C841 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = 65CA121520E6179D0000C841;
+					};
+					65CA123820E6179E0000C841 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = 65CA121520E6179D0000C841;
+					};
+				};
+			};
+			buildConfigurationList = 65CA121120E6179D0000C841 /* Build configuration list for PBXProject "DFPhotoKit" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 65CA120D20E6179D0000C841;
+			productRefGroup = 65CA121720E6179D0000C841 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				65CA121520E6179D0000C841 /* DFPhotoKit */,
+				65CA122D20E6179E0000C841 /* DFPhotoKitTests */,
+				65CA123820E6179E0000C841 /* DFPhotoKitUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		65CA121420E6179D0000C841 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65CA122620E6179E0000C841 /* LaunchScreen.storyboard in Resources */,
+				65CA122320E6179E0000C841 /* Assets.xcassets in Resources */,
+				65CA122120E6179D0000C841 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65CA122C20E6179E0000C841 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65CA123720E6179E0000C841 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		238E193C309809D02BDE5A0D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DFPhotoKit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		65CA121220E6179D0000C841 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65CA121E20E6179D0000C841 /* ViewController.m in Sources */,
+				65CA122920E6179E0000C841 /* main.m in Sources */,
+				65CA121B20E6179D0000C841 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65CA122A20E6179E0000C841 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65CA123320E6179E0000C841 /* DFPhotoKitTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65CA123520E6179E0000C841 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65CA123E20E6179E0000C841 /* DFPhotoKitUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		65CA123020E6179E0000C841 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65CA121520E6179D0000C841 /* DFPhotoKit */;
+			targetProxy = 65CA122F20E6179E0000C841 /* PBXContainerItemProxy */;
+		};
+		65CA123B20E6179E0000C841 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65CA121520E6179D0000C841 /* DFPhotoKit */;
+			targetProxy = 65CA123A20E6179E0000C841 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		65CA121F20E6179D0000C841 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				65CA122020E6179D0000C841 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		65CA122420E6179E0000C841 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				65CA122520E6179E0000C841 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		65CA124020E6179E0000C841 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		65CA124120E6179E0000C841 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		65CA124320E6179E0000C841 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74A97D7F103170A3F959E3C5 /* Pods-DFPhotoKit.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G3Z423E898;
+				INFOPLIST_FILE = DFPhotoKit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = DF.DFPhotoKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		65CA124420E6179E0000C841 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F78771FA71ADE6D623439423 /* Pods-DFPhotoKit.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G3Z423E898;
+				INFOPLIST_FILE = DFPhotoKit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = DF.DFPhotoKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		65CA124620E6179E0000C841 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G3Z423E898;
+				INFOPLIST_FILE = DFPhotoKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = DF.DFPhotoKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DFPhotoKit.app/DFPhotoKit";
+			};
+			name = Debug;
+		};
+		65CA124720E6179E0000C841 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G3Z423E898;
+				INFOPLIST_FILE = DFPhotoKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = DF.DFPhotoKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DFPhotoKit.app/DFPhotoKit";
+			};
+			name = Release;
+		};
+		65CA124920E6179E0000C841 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G3Z423E898;
+				INFOPLIST_FILE = DFPhotoKitUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = DF.DFPhotoKitUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DFPhotoKit;
+			};
+			name = Debug;
+		};
+		65CA124A20E6179E0000C841 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G3Z423E898;
+				INFOPLIST_FILE = DFPhotoKitUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = DF.DFPhotoKitUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DFPhotoKit;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		65CA121120E6179D0000C841 /* Build configuration list for PBXProject "DFPhotoKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65CA124020E6179E0000C841 /* Debug */,
+				65CA124120E6179E0000C841 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65CA124220E6179E0000C841 /* Build configuration list for PBXNativeTarget "DFPhotoKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65CA124320E6179E0000C841 /* Debug */,
+				65CA124420E6179E0000C841 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65CA124520E6179E0000C841 /* Build configuration list for PBXNativeTarget "DFPhotoKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65CA124620E6179E0000C841 /* Debug */,
+				65CA124720E6179E0000C841 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65CA124820E6179E0000C841 /* Build configuration list for PBXNativeTarget "DFPhotoKitUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65CA124920E6179E0000C841 /* Debug */,
+				65CA124A20E6179E0000C841 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 65CA120E20E6179D0000C841 /* Project object */;
+}

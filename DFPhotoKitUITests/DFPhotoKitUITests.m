@@ -1,18 +1,18 @@
 //
-//  PhotoKitUITests.m
-//  PhotoKitUITests
+//  DFPhotoKitUITests.m
+//  DFPhotoKitUITests
 //
-//  Created by ongfei on 2018/5/11.
+//  Created by ongfei on 2018/6/29.
 //  Copyright © 2018年 ongfei. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface PhotoKitUITests : XCTestCase
+@interface DFPhotoKitUITests : XCTestCase
 
 @end
 
-@implementation PhotoKitUITests
+@implementation DFPhotoKitUITests
 
 - (void)setUp {
     [super setUp];

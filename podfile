@@ -1,4 +1,4 @@
-target 'PhotoKit' do
+target 'DFPhotoKit' do
 
 pod 'Masonry'
 pod 'FLAnimatedImage'
