@@ -138,11 +138,13 @@
             if ([[asset valueForKey:@"filename"] hasSuffix:@"GIF"]) {
                 photoModel.type = DFPhotoModelMediaTypePhotoGif;
             }else if (@available(iOS 9.1, *)) {
-                if (asset.mediaSubtypes == PHAssetMediaSubtypePhotoLive){
+                if (asset.mediaSubtypes == PHAssetMediaSubtypePhotoLive) {
                     photoModel.type = DFPhotoModelMediaTypeLivePhoto;
                 }else {
                     photoModel.type = DFPhotoModelMediaTypePhoto;
                 }
+            }else {
+                photoModel.type = DFPhotoModelMediaTypePhoto;
             }
             [photoArray addObject:photoModel];
             

@@ -200,13 +200,13 @@
 		65CA127E20E628820000C841 /* 图片浏览器 */ = {
 			isa = PBXGroup;
 			children = (
+				65CA128320E628820000C841 /* DFVideoPlayer.h */,
 				65CA127F20E628820000C841 /* DFVideoPlayer.m */,
 				65CA128020E628820000C841 /* DFPreviewViewController.h */,
-				65CA128120E628820000C841 /* DFVideoPreviewCell.h */,
-				65CA128220E628820000C841 /* DFPhotoPreviewCell.m */,
-				65CA128320E628820000C841 /* DFVideoPlayer.h */,
 				65CA128420E628820000C841 /* DFPreviewViewController.m */,
 				65CA128520E628820000C841 /* DFPhotoPreviewCell.h */,
+				65CA128220E628820000C841 /* DFPhotoPreviewCell.m */,
+				65CA128120E628820000C841 /* DFVideoPreviewCell.h */,
 				65CA128620E628820000C841 /* DFVideoPreviewCell.m */,
 			);
 			path = "图片浏览器";
@@ -215,16 +215,16 @@
 		65CA128720E628820000C841 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				65CA128820E628820000C841 /* DFImageView.h */,
+				65CA129020E628820000C841 /* DFPhotoKitManager.h */,
 				65CA128920E628820000C841 /* DFPhotoKitManager.m */,
+				65CA128F20E628820000C841 /* DFPhotoKitDeal.h */,
 				65CA128A20E628820000C841 /* DFPhotoKitDeal.m */,
 				65CA128B20E628820000C841 /* DFPhotoModel.h */,
-				65CA128C20E628820000C841 /* DFPhotoAlbumModel.h */,
-				65CA128D20E628820000C841 /* DFImageView.m */,
 				65CA128E20E628820000C841 /* DFPhotoModel.m */,
-				65CA128F20E628820000C841 /* DFPhotoKitDeal.h */,
-				65CA129020E628820000C841 /* DFPhotoKitManager.h */,
+				65CA128C20E628820000C841 /* DFPhotoAlbumModel.h */,
 				65CA129120E628820000C841 /* DFPhotoAlbumModel.m */,
+				65CA128820E628820000C841 /* DFImageView.h */,
+				65CA128D20E628820000C841 /* DFImageView.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -232,8 +232,8 @@
 		65CA129220E628820000C841 /* AllAlbum */ = {
 			isa = PBXGroup;
 			children = (
-				65CA129320E628820000C841 /* DFPhotoKitCollectionViewController.m */,
 				65CA129420E628820000C841 /* DFPhotoKitCollectionViewController.h */,
+				65CA129320E628820000C841 /* DFPhotoKitCollectionViewController.m */,
 			);
 			path = AllAlbum;
 			sourceTree = "<group>";

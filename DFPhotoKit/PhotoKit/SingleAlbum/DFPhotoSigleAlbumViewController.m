@@ -50,7 +50,8 @@
     
     self.photoManager = [DFPhotoKitManager new];
     
-    [self.photoManager getPhotoListWithAlbumModel:self.album complete:^(NSArray *allList, NSArray *photoList, NSArray *videoList) {
+    [self.photoManager getPhotoListWithAlbumModel:self.album complete:^(NSArray<DFPhotoModel *> *allList, NSArray<DFPhotoModel *> *photoList, NSArray<DFPhotoModel *> *videoList) {
+        
         self.sourceArr = [NSArray arrayWithArray:allList];
         self.photoList = [NSArray arrayWithArray:photoList];
         self.videoList = [NSArray arrayWithArray:videoList];
@@ -300,6 +301,9 @@
 - (void)nextBtnClick {
     NSLog(@"%@", [NSString stringWithFormat:@"selectPhotoCount = %ld--  selectVideoCount = %ld",self.selectPhotoArr.count,self.selectVideoArr.count]);
     
+    
+    NSLog(@"\r ----------------------点击开始");
+    
     if (self.selectPhotoArr.count == 0 && self.selectVideoArr.count == 0) {
         return;
     }
@@ -314,7 +318,7 @@
         
         NSLog(@"%@",allURL);
         NSLog(@"%@",[NSTemporaryDirectory() stringByAppendingPathComponent:@""]);
-
+        NSLog(@"\r ----------------------保存成功");
         
     } failed:^{
         

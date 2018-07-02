@@ -59,7 +59,7 @@
         }
     }];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"转" style:(UIBarButtonItemStylePlain) target:self action:@selector(changeUI)];
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"转" style:(UIBarButtonItemStylePlain) target:self action:@selector(changeUI)];
     
     
 }
