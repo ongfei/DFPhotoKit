@@ -100,6 +100,8 @@
         make.centerY.equalTo(toolBarView);
         make.left.equalTo(toolBarView).offset(10);
     }];
+    [self.previewBtn addTarget:self action:@selector(previewBtnClick) forControlEvents:(UIControlEventTouchUpInside)];
+
     
     self.originalBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
     [toolBarView addSubview:self.originalBtn];
@@ -274,6 +276,54 @@
 
 - (void)originalBtnClick {
     self.originalBtn.selected = !self.originalBtn.selected;
+}
+
+
+- (void)previewBtnClick {
+    
+    DFPreviewViewController *preview = [DFPreviewViewController new];
+    preview.selectedType = self.selectPhotoArr.count > 0 ? DFPreviewViewTypePhoto : self.selectVideoArr.count > 0 ? DFPreviewViewTypeVideo : DFPreviewViewTypeNone;
+    
+    if (preview.selectedType == DFPhotoModelMediaTypeVideo) {
+        preview.photoM = self.selectVideoArr.firstObject;
+        preview.sourceArr = self.selectVideoArr;
+        preview.type = DFPreviewViewTypeVideo;
+        preview.selectArr = [NSMutableArray arrayWithArray:self.selectVideoArr];
+        preview.maxPhotoCount = self.maxVideoCount;
+        preview.delegate = self;
+        
+    }else if (preview.selectedType == DFPhotoModelMediaTypePhoto){
+        
+        preview.photoM = self.selectPhotoArr.firstObject;
+        preview.sourceArr = self.selectPhotoArr;
+        preview.type = DFPreviewViewTypePhoto;
+        preview.selectArr = [NSMutableArray arrayWithArray:self.selectPhotoArr];
+        preview.maxPhotoCount = self.maxPhotoCount;
+        preview.delegate = self;
+        
+    }else {
+        if ([(DFPhotoModel *)[self.sourceArr firstObject] type] == DFPhotoModelMediaTypePhoto) {
+            
+            preview.photoM = self.sourceArr.firstObject;
+            preview.sourceArr = self.photoList;
+            preview.type = DFPreviewViewTypePhoto;
+            preview.selectArr = [NSMutableArray arrayWithArray:self.selectPhotoArr];
+            preview.maxPhotoCount = self.maxPhotoCount;
+            preview.delegate = self;
+            
+        }else {
+            
+            preview.photoM = self.sourceArr.firstObject;
+            preview.sourceArr = self.videoList;
+            preview.type = DFPreviewViewTypeVideo;
+            preview.selectArr = [NSMutableArray arrayWithArray:self.selectVideoArr];
+            preview.maxPhotoCount = self.maxVideoCount;
+            preview.delegate = self;
+            
+        }
+        
+    }
+    [self presentViewController:preview animated:YES completion:nil];
     
 }
 

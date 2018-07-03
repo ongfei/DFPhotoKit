@@ -248,9 +248,9 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (self.nextBtn.hidden == YES) {
-        [self hiddle];
-    }
+//    if (self.nextBtn.hidden == YES) {
+//        [self hiddle];
+//    }
     if (self.type == DFPreviewViewTypePhoto) {
         [(DFPhotoPreviewCell *)cell stopEven];
     }else {
