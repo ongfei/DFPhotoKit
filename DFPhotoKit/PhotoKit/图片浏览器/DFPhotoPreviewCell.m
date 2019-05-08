@@ -28,6 +28,8 @@
         
         self.scrollBg.contentSize = CGSizeMake(self.contentView.frame.size.width, self.contentView.frame.size.height);
         self.scrollBg.delegate = self;
+        self.scrollBg.maximumZoomScale = 1.5;
+        self.scrollBg.minimumZoomScale = 0.5;
 
         
         self.imageV = [[DFImageView alloc] init];
