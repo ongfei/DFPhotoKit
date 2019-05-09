@@ -41,6 +41,9 @@
         make.edges.equalTo(self.view);
     }];
     
+    if (@available(iOS 11.0, *)) {
+        self.collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    }
     
     self.photoManager = [DFPhotoKitManager new];
     
