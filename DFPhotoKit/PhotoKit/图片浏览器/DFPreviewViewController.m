@@ -85,7 +85,9 @@
     
     [self.collectionView registerClass:[DFPhotoPreviewCell class] forCellWithReuseIdentifier:@"PhotoPreviewCell"];
     [self.collectionView registerClass:[DFVideoPreviewCell class] forCellWithReuseIdentifier:@"DFVideoPreviewCell"];
-    
+    if (@available(iOS 11.0, *)) {
+        self.collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    }
     self.collectionView.backgroundColor = [UIColor whiteColor];
 
     
