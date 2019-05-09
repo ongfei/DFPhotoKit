@@ -72,6 +72,10 @@
     [self.view addSubview:self.collectionView];
     self.collectionView.backgroundColor = [UIColor colorWithWhite:0.89 alpha:1];
     
+    if (@available(iOS 11.0, *)) {
+        self.collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    }
+    
     [self.collectionView registerClass:[DFPhotoSigleAlbumCell class] forCellWithReuseIdentifier:@"DFPhotoSigleAlbumCell"];
     [self.collectionView registerClass:[DFPhotoSigleAlbumCameraCell class] forCellWithReuseIdentifier:@"DFPhotoSigleAlbumCameraCell"];
     
